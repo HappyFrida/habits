@@ -136,3 +136,24 @@ document.addEventListener('DOMContentLoaded', function() {
         // Example: colorsArray.push(color);
     }
 });
+
+
+
+// weekly or monthly?
+
+document.addEventListener('DOMContentLoaded', function() {
+    const weeklyCheckbox = document.getElementById('weekly');
+    const monthlyCheckbox = document.getElementById('monthly');
+
+    weeklyCheckbox.addEventListener('change', function() {
+        if (weeklyCheckbox.checked) {
+            monthlyCheckbox.checked = false;
+        }
+    });
+
+    monthlyCheckbox.addEventListener('change', function() {
+        if (monthlyCheckbox.checked) {
+            weeklyCheckbox.checked = false;
+        }
+    });
+});
