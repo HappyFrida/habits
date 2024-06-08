@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Entry</title>
-    <link rel="stylesheet" href="../styles/main.css">   
-</head>
+    <meta name="description" content="Time budget your life. Keep up with all your day to day habits and responsabilities. Habit building. Habit tracking. ">
+    <title>New Habit</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="../css/main.css">   
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
 <body>
 <div class="main">
 <div class="menu-button" onclick="toggleMenu()">
@@ -21,30 +28,104 @@
 
 <div class="content">
 
-<div class="form">
-    <input type="text" class="text-input" placeholder="How much did you do?" id="userInput">
-    <input type="text" class="text-input" placeholder="How much did you do?" id="userInput">
-    <input type="text" class="text-input" placeholder="How much did you do?" id="userInput">
-    <input type="text" class="text-input" placeholder="How much did you do?" id="userInput">
-    <input type="text" class="text-input" placeholder="How much did you do?" id="userInput">
-    <input type="text" class="text-input" placeholder="How much did you do?" id="userInput">
-    <input type="text" class="text-input" placeholder="How much did you do?" id="userInput">
-    <input type="text" class="text-input" placeholder="How much did you do?" id="userInput">
-        
-</div>
-    <button class="new-habit" onclick="submitText()"><a href="./src/pages/new-entry.html">Submit</a></button>
+      <form class="new-habit-form">
 
-   
+          <div class="span2">
+              <input type="text" id="habit-name" placeholder="Habit Name">
+          </div>
+  
+          <div class="span2 color-selector">
+              <div id="selected-color" class="color-dropdown" style="background-color: #0000FF;">
+                  <span class="dropdown-arrow">&#9660;</span>
+              </div>
+              <div id="color-palette" class="color-palette hidden">
+                  <div class="color-close">x</div>
+                  <div class="color-row">
+                      <div class="color-box" style="background-color: #FF0000;" data-color="#FF0000"></div>
+                      <div class="color-box" style="background-color: #00FF00;" data-color="#00FF00"></div>
+                      <div class="color-box" style="background-color: #0000FF;" data-color="#0000FF"></div>
+                      <!-- Add more colors as needed -->
+                  </div>
+                  <!-- Add more rows for other shades -->
+              </div>
+          </div>
+  
+          <div>
+              <label>Goal Number:</label>
+              <input type="number" id="goal-number" required>
+          </div>
+          
+          <div>
+              <label for="unit">Unit:</label>
+              <input type="text" id="unit" required>
+          </div>
+          
+          <div>
+            <label for="computation">Computation:</label>
+          </div>
+
+          <div>
+              <select id="computation">
+                  <option value="add">Add</option>
+                  <option value="subtract">Subtract</option>
+              </select>
+          </div>
+  
+          <div class="span2" style="height: 4px; width: 70%; background-color: #ccc;"></div>
+  
+          <div>
+              <label for="habit-name" style="text-align: right; padding-right: 10px;">Repeat</label>
+          </div> 
+  
+          <div class="toggle-container">
+              <input type="checkbox" id="toggle" class="toggle-checkbox">
+              <label for="toggle" class="toggle-label"></label>
+          </div>
+  
+          <div class="option-container">
+              <label class="option-label" for="weekly">Weekly</label>
+              <div class="tick-container">
+                  <input type="checkbox" id="weekly" class="tick-checkbox">
+                  <label for="weekly" class="tick-label"></label>
+              </div>
+          </div>
+  
+          <div class="option-container">
+              <label class="option-label" for="monthly">Monthly</label>
+              <div class="tick-container">
+                  <input type="checkbox" id="monthly" class="tick-checkbox">
+                  <label for="monthly" class="tick-label"></label>
+              </div>
+          </div>
+  
+        <div>
+          <label for="start-date">Start date</label>
+        </div>
+
+        <div>  <label for="end-date">End date</label></div>
+
+          <div class="date-selector">
+              <input type="text" id="start-date" class="date-input" placeholder="__/__/____">
+          </div>
+  
+          <div class="date-selector">
+              <input type="text" id="end-date" class="date-input" placeholder="__/__/____">
+          </div>
+
+          <div class="span2"><button class="new-habit" type="submit"><a href="habits.html">Submit</a></button></div>
+      </form>
+  
  
-</div>
-
-
+</div><!-- container -->
 
 
 
 </div> <!-- main -->
 
-
-<script src="../scripts/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<script src="../js/main.js"></script>
+<script src="../app.js"></script>
 </body>
 </html>
