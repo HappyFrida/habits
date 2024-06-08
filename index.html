@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="./src/styles/main.css">   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffc518">
+  <meta name="description" content="Time budget your life. Keep up with all your day to day habits and responsabilities. Habit building. Habit tracking. ">
+  <title>Habits Dashboard</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="css/main.css">   
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body class="poppins-regular">
-<div class="main">
+    <div class="main">
+    
+    
+    <div class="menu-button" onclick="toggleMenu()"><div class="menu-bars"></div><div class="menu-bars" ></div><div class="menu-bars"></div></div>
+    
+    <div class="menu">
+    
+        <div class="triangle-up"></div>
+    
+        <div class="menu-link-container">
+            
+        <a class="menu-link" href="index.html">Dashboard </a>
+        <a class="menu-link" href="pages/habits.html">Habits</a>
+        <a class="menu-link" href="pages/stats.html">Stats</a>
+        <a class="menu-link" href="pages/settings.html">Settings</a>
+        <a class="menu-link" href="pages/account.html">Account</a>
+    
+        </div>
+    
+    </div>
+    
+    
+    
+    <div class="content">
+        <button id="new-entry-button" class="new-entry"><a href="pages/new-entry.html">New Entry</a></button>
+    
+    <ul id="habit-list">
+      <!-- Habit items will be dynamically inserted here -->
+    </ul>
 
-
-<div class="menu-button" onclick="toggleMenu()"><div class="menu-bars"></div><div class="menu-bars" ></div><div class="menu-bars"></div></div>
-
-<div class="menu">
-
-    <div class="triangle-up"></div>
-
-    <div class="menu-link-container">
-        
-    <a class="menu-link" href="index.html">Dashboard </a>
-    <a class="menu-link" href="src/pages/habits.html">Habits</a>
-    <a class="menu-link" href="stats.html">Stats</a>
-    <a class="menu-link" href="settings.html">Settings</a>
-    <a class="menu-link" href="account.html">Account</a>
 
     </div>
-
-</div>
-
-
-
-<div class="content">
-    <button class="new-entry"><a href="./src/pages/new-entry.html">New Entry</a></button>
-
-</div>
-
-
-
-
-
-</div> <!-- main -->
-
-
-   <script src="./src/scripts/main.js"></script>
+    
+    
+    
+    
+    
+    </div> <!-- main -->
+    
+    
+        <script src="js/main.js"></script>
+        <script src="app.js"></script>
 </body>
 </html>
