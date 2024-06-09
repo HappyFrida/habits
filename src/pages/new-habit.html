@@ -6,7 +6,7 @@
     <meta name="description" content="Time budget your life. Keep up with all your day to day habits and responsabilities. Habit building. Habit tracking. ">
     <title>New Habit</title>
     <link rel="manifest" href="../manifest.json">
-    <link rel="stylesheet" href="../styles/main.css">   
+    <link rel="stylesheet" href="../css/main.css">   
   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,13 +39,98 @@
               </div>
               <div id="color-palette" class="color-palette hidden">
                   <div class="color-close">x</div>
-                  <div class="color-row">
-                      <div class="color-box" style="background-color: #FF0000;" data-color="#FF0000"></div>
-                      <div class="color-box" style="background-color: #00FF00;" data-color="#00FF00"></div>
-                      <div class="color-box" style="background-color: #0000FF;" data-color="#0000FF"></div>
-                      <!-- Add more colors as needed -->
+                  <div class="color-column">
+                    <div class="color-box" style="background-color: #FFCCCC;" data-color="#FFCCCC"></div>
+                    <div class="color-box" style="background-color: #FF6666;" data-color="#FF6666"></div>
+                    <div class="color-box" style="background-color: #FF3333;" data-color="#FF3333"></div>
+                    <div class="color-box" style="background-color: #FF0000;" data-color="#FF0000"></div>
+                    <div class="color-box" style="background-color: #CC0000;" data-color="#CC0000"></div>
+                    <div class="color-box" style="background-color: #990000;" data-color="#990000"></div>
                   </div>
-                  <!-- Add more rows for other shades -->
+
+                  <div class="color-column">
+                    <div class="color-box" style="background-color: #FFE5CC;" data-color="#FFE5CC"></div>
+                    <div class="color-box" style="background-color: #FFCC99;" data-color="#FFCC99"></div>
+                    <div class="color-box" style="background-color: #FFB266;" data-color="#FFB266"></div>
+                    <div class="color-box" style="background-color: #FF9933;" data-color="#FF9933"></div>
+                    <div class="color-box" style="background-color: #CC7A00;" data-color="#CC7A00"></div>
+                    <div class="color-box" style="background-color: #994C00;" data-color="#994C00"></div>
+                  </div>
+
+                  <div class="color-column">
+                    <div class="color-box" style="background-color: #FFFFCC;" data-color="#FFFFCC"></div>
+                    <div class="color-box" style="background-color: #FFFF99;" data-color="#FFFF99"></div>
+                    <div class="color-box" style="background-color: #FFFF66;" data-color="#FFFF66"></div>
+                    <div class="color-box" style="background-color: #FFFF33;" data-color="#FFFF33"></div>
+                    <div class="color-box" style="background-color: #CCCC00;" data-color="#CCCC00"></div>
+                    <div class="color-box" style="background-color: #999900;" data-color="#999900"></div>
+                  </div>
+
+                  <div class="color-column">
+                    <div class="color-box" style="background-color: #CCFFCC;" data-color="#CCFFCC"></div>
+                    <div class="color-box" style="background-color: #99FF99;" data-color="#99FF99"></div>
+                    <div class="color-box" style="background-color: #66FF66;" data-color="#66FF66"></div>
+                    <div class="color-box" style="background-color: #33FF33;" data-color="#33FF33"></div>
+                    <div class="color-box" style="background-color: #00CC00;" data-color="#00CC00"></div>
+                    <div class="color-box" style="background-color: #009900;" data-color="#009900"></div>
+                  </div>
+
+                  <div class="color-column">
+                    <div class="color-box" style="background-color: #CCFFFF;" data-color="#CCFFFF"></div>
+                    <div class="color-box" style="background-color: #99FFFF;" data-color="#99FFFF"></div>
+                    <div class="color-box" style="background-color: #66FFFF;" data-color="#66FFFF"></div>
+                    <div class="color-box" style="background-color: #33FFFF;" data-color="#33FFFF"></div>
+                    <div class="color-box" style="background-color: #00CCCC;" data-color="#00CCCC"></div>
+                    <div class="color-box" style="background-color: #009999;" data-color="#009999"></div>
+                  </div>
+
+                  <div class="color-column">
+                    <div class="color-box" style="background-color: #CCCCFF;" data-color="#CCCCFF"></div>
+                    <div class="color-box" style="background-color: #9999FF;" data-color="#9999FF"></div>
+                    <div class="color-box" style="background-color: #6666FF;" data-color="#6666FF"></div>
+                    <div class="color-box" style="background-color: #3333FF;" data-color="#3333FF"></div>
+                    <div class="color-box" style="background-color: #0000CC;" data-color="#0000CC"></div>
+                    <div class="color-box" style="background-color: #000099;" data-color="#000099"></div>
+                  </div>
+
+                  <div class="color-column">
+                    <div class="color-box" style="background-color: #E5CCFF;" data-color="#E5CCFF"></div>
+                    <div class="color-box" style="background-color: #CC99FF;" data-color="#CC99FF"></div>
+                    <div class="color-box" style="background-color: #B266FF;" data-color="#B266FF"></div>
+                    <div class="color-box" style="background-color: #9933FF;" data-color="#9933FF"></div>
+                    <div class="color-box" style="background-color: #7A00CC;" data-color="#7A00CC"></div>
+                    <div class="color-box" style="background-color: #4C0099;" data-color="#4C0099"></div>
+                  </div>
+
+                  <div class="color-column">
+                    <div class="color-box" style="background-color: #FFCCFF;" data-color="#FFCCFF"></div>
+                    <div class="color-box" style="background-color: #FF99FF;" data-color="#FF99FF"></div>
+                    <div class="color-box" style="background-color: #FF66FF;" data-color="#FF66FF"></div>
+                    <div class="color-box" style="background-color: #FF33FF;" data-color="#FF33FF"></div>
+                    <div class="color-box" style="background-color: #CC00CC;" data-color="#CC00CC"></div>
+                    <div class="color-box" style="background-color: #990099;" data-color="#990099"></div>
+                  </div>
+
+                  <div class="color-column">
+                    <div class="color-box" style="background-color: #FFCCE5;" data-color="#FFCCE5"></div>
+                    <div class="color-box" style="background-color: #FF99CC;" data-color="#FF99CC"></div>
+                    <div class="color-box" style="background-color: #FF66B2;" data-color="#FF66B2"></div>
+                    <div class="color-box" style="background-color: #FF3399;" data-color="#FF3399"></div>
+                    <div class="color-box" style="background-color: #CC007A;" data-color="#CC007A"></div>
+                    <div class="color-box" style="background-color: #983257;" data-color="#99004C"></div>
+                  </div>
+
+                  <div class="color-column">
+                    <div class="color-box" style="background-color: #E5E5E5;" data-color="#E5E5E5"></div>
+                    <div class="color-box" style="background-color: #CCCCCC;" data-color="#CCCCCC"></div>
+                    <div class="color-box" style="background-color: #999999;" data-color="#999999"></div>
+                    <div class="color-box" style="background-color: #666666;" data-color="#666666"></div>
+                    <div class="color-box" style="background-color: #333333;" data-color="#333333"></div>
+                    <div class="color-box" style="background-color: #000000;" data-color="#000000"></div>
+                  </div>
+                  
+                  
+                  
               </div>
           </div>
   
@@ -128,4 +213,3 @@
 <script src="../app.js"></script>
 </body>
 </html>
-
