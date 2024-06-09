@@ -93,17 +93,26 @@ $(document).ready(function() {
     });
 });
 
-
-
 // color selector
 document.addEventListener('DOMContentLoaded', function() {
     const selectedColor = document.getElementById('selected-color');
     const colorPalette = document.getElementById('color-palette');
     const colorClose = document.querySelector('.color-close');
+    const colorDropdown = document.querySelector('.color-dropdown');
+
+    function updateColorPalettePosition() {
+        const rect = colorDropdown.getBoundingClientRect();
+        colorPalette.style.left = (window.scrollX + rect.left) + 'px';
+        colorPalette.style.top = (window.scrollY + rect.bottom) + 'px';
+        colorPalette.style.width = `${rect.width - 20}px`;
+    }
 
     selectedColor.addEventListener('click', function(event) {
         event.stopPropagation(); // Prevent the click from bubbling up
-        colorPalette.classList.toggle('hidden');
+        colorPalette.classList.toggle('active');
+        if (colorPalette.classList.contains('active')) {
+            updateColorPalettePosition();
+        }
     });
 
     const colorBoxes = document.querySelectorAll('.color-box');
@@ -111,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
         box.addEventListener('click', function() {
             const color = box.getAttribute('data-color');
             selectedColor.style.backgroundColor = color;
-            colorPalette.classList.add('hidden');
+            colorPalette.classList.remove('active');
             console.log("Selected Color: " + color);
             // Here you can call a function to add the color to an array
             addColorToArray(color);
@@ -120,14 +129,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close the color palette when clicking the 'x' icon
     colorClose.addEventListener('click', function() {
-        colorPalette.classList.add('hidden');
+        colorPalette.classList.remove('active');
     });
 
     // Hide the color palette when clicking outside of it
     document.addEventListener('click', function(event) {
         if (!selectedColor.contains(event.target) && !colorPalette.contains(event.target)) {
-            colorPalette.classList.add('hidden');
+            colorPalette.classList.remove('active');
         }
+    });
+
+    // Close the color palette or reset its position on window resize
+    window.addEventListener('resize', function() {
+        colorPalette.classList.remove('active');
+        // Alternatively, reset the position without hiding it
+        // if (colorPalette.classList.contains('active')) {
+        //     updateColorPalettePosition();
+        // }
     });
 
     function addColorToArray(color) {
@@ -157,3 +175,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+// if repeat is off no tick on weekly or monthly
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleCheckbox = document.getElementById('toggle');
+    const weeklyCheckbox = document.getElementById('weekly');
+    const monthlyCheckbox = document.getElementById('monthly');
+
+    // Function to update the state of the tick buttons based on the toggle
+    function updateTickButtons() {
+        if (toggleCheckbox.checked) {
+            weeklyCheckbox.disabled = false;
+            monthlyCheckbox.disabled = false;
+        } else {
+            weeklyCheckbox.disabled = true;
+            monthlyCheckbox.disabled = true;
+            weeklyCheckbox.checked = false;
+            monthlyCheckbox.checked = false;
+        }
+    }
+
+    // Initial state update
+    updateTickButtons();
+
+    // Event listener for the toggle checkbox
+    toggleCheckbox.addEventListener('change', updateTickButtons);
+});
+
