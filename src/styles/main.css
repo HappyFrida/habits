@@ -54,9 +54,7 @@
     
         }
 
-        /* .new-habit-form{
-            max-width: 30%;
-        } */
+
     }
 
     
@@ -235,21 +233,6 @@
         
     }
 
-    /* .form {
-        height: 65vh;
-        width: 80vw;
-        display: grid;
-        gap: 1rem;
-        padding: 0px 10px;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    
-
-    } */
-
-
 
 
 
@@ -377,7 +360,6 @@ form input, form select {
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    /* border-radius: 4px; */
     box-sizing: border-box;
 }
 
@@ -404,7 +386,6 @@ li {
     margin: 50px auto;
     padding: 20px;
     background-color: rgb(249, 245, 239);
-    /* border-radius: 8px; */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -439,12 +420,11 @@ li {
 
 .color-palette {
     position: absolute;
-    top: 40px;
+    top: 200px;
     left: 0;
-    width: 220px;
     border: 1px solid #ccc;
     background: white;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(10, 1fr);
     padding: 10px;
     border-radius: 4px;
@@ -452,8 +432,8 @@ li {
     z-index: 10;
 }
 
-.color-palette.hidden {
-    display: none;
+.color-palette.active {
+    display: grid;
 }
 
 .color-box {
