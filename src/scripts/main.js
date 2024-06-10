@@ -95,19 +95,20 @@ $(document).ready(function() {
 
 // color selector
 document.addEventListener('DOMContentLoaded', function() {
+    const colorDropOuter = document.getElementById('color-drop-outer');
     const selectedColor = document.getElementById('selected-color');
     const colorPalette = document.getElementById('color-palette');
-    const colorClose = document.querySelector('.color-close');
+    // const colorClose = document.querySelector('.color-close');
     const colorDropdown = document.querySelector('.color-dropdown');
 
     function updateColorPalettePosition() {
         const rect = colorDropdown.getBoundingClientRect();
         colorPalette.style.left = (window.scrollX + rect.left) + 'px';
-        colorPalette.style.top = (window.scrollY + rect.bottom) + 'px';
+        colorPalette.style.top = (window.scrollY + 10 + rect.bottom) + 'px';
         colorPalette.style.width = `${rect.width - 20}px`;
     }
 
-    selectedColor.addEventListener('click', function(event) {
+    colorDropOuter.addEventListener('click', function(event) {
         event.stopPropagation(); // Prevent the click from bubbling up
         colorPalette.classList.toggle('active');
         if (colorPalette.classList.contains('active')) {
@@ -128,9 +129,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close the color palette when clicking the 'x' icon
-    colorClose.addEventListener('click', function() {
-        colorPalette.classList.remove('active');
-    });
+    // colorClose.addEventListener('click', function() {
+    //     colorPalette.classList.remove('active');
+    // });
 
     // Hide the color palette when clicking outside of it
     document.addEventListener('click', function(event) {
