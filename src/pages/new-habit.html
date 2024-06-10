@@ -15,12 +15,8 @@
   </head>
 <body>
 <div class="main">
-<div class="menu-button" onclick="toggleMenu()">
-
-   
-   <a href="habits.html" style="color: black;"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-      </svg>
+<div class="menu-button">
+   <a href="habits.html" style="color: black; text-decoration: none; font-size: 40px;"> &#129120;
    </a>
 </div>
 
@@ -34,11 +30,12 @@
           </div>
   
           <div class="span2 ">
-              <div id="selected-color" class="color-dropdown" style="background-color: #0000FF;">
-                  <span class="dropdown-arrow">&#9660;</span>
+             <div id="color-drop-outer" class="color-drop-outer"> <div id="selected-color" class="color-dropdown" style="background-color: #4691fa; ">
+               </div> <div id="selected-color" class="dropdown-arrow">&#9660;</div>
               </div>
+
               <div id="color-palette" class="color-palette hidden">
-                  <div class="color-close">x</div>
+
                   <div class="color-column">
                     <div class="color-box" style="background-color: #FFCCCC;" data-color="#FFCCCC"></div>
                     <div class="color-box" style="background-color: #FF6666;" data-color="#FF6666"></div>
