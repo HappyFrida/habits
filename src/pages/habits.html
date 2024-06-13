@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../styles/main.css">  
+    <meta name="description" content="Time budget your life. Keep up with all your day to day habits and responsibilities. Habit building. Habit tracking.">
+    <title>Habits</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="../css/main.css">   
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body class="poppins-regular">
 <div class="main">
@@ -12,35 +19,87 @@
     <div class="menu-button" onclick="toggleMenu()"><div class="menu-bars"></div><div class="menu-bars" ></div><div class="menu-bars"></div></div>
 
     <div class="menu">
-    
         <div class="triangle-up"></div>
-    
         <div class="menu-link-container">
-    
-    <a class="menu-link" href="../../index.html">Dashboard</a>
-    <a class="menu-link" href="habits.html">Habits</a>
-    <a class="menu-link" href="stats.html">Stats</a>
-    <a class="menu-link" href="settings.html">Settings</a>
-    <a class="menu-link" href="account.html">Account</a>
+            <a class="menu-link" href="../index.html">Dashboard</a>
+            <a class="menu-link" href="habits.html">Habits</a>
+            <a class="menu-link" href="stats.html">Stats</a>
+            <a class="menu-link" href="settings.html">Settings</a>
+            <a class="menu-link" href="account.html">Account</a>
+        </div>
+    </div>
 
-   
-</div>
-
-</div>
-
-
-<div class="content">
-    <button class="new-habit"><a class="poppins-semibold" href="new-habit.html">New Habit</a></button>
-    <!-- Add your other content here -->
-</div>
-
-
-
-
-
+    <div class="content">
+        <button id="new-habit-button" class="new-habit"><a class="poppins-semibold" href="new-habit.html">New Habit</a></button>
+        <div id="habits-container"></div>
+    </div>
 </div> <!-- main -->
 
+<script src="../js/main.js"></script>
+<script src="../app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const habitsContainer = document.getElementById('habits-container');
 
-<script src="../scripts/main.js"></script>
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith('habitDetails_')) {
+            const habitDetails = JSON.parse(localStorage.getItem(key));
+
+            // Create habit card
+            const habitCard = document.createElement('div');
+            habitCard.className = 'habit-card';
+            habitCard.style.cursor = 'pointer';
+            habitCard.innerHTML = `
+                <div class="habit-header"> 
+                    <h2>${key.replace('habitDetails_', '')}</h2>
+                    <div class="habit-goal">Goal: ${habitDetails[1]} ${habitDetails[2]}</div>
+                </div>
+                <div class="color-bar" style="background: ${habitDetails[0]};"></div>
+            `;
+
+            // Make the card clickable
+            habitCard.addEventListener('click', function() {
+                window.location.href = `edit-habit.html?habit=${encodeURIComponent(key)}`;
+            });
+
+            habitsContainer.appendChild(habitCard);
+        }
+    }
+});
+
+</script>
+<style>
+/* Add some basic styles for the dashboard */
+.habit-card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.habit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.habit-header h2 {
+    margin: 0;
+}
+
+.habit-goal {
+    font-size: 14px;
+    color: #666;
+}
+
+.habit-underline {
+    height: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+</style>
 </body>
 </html>
