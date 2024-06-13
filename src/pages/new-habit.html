@@ -6,7 +6,7 @@
     <meta name="description" content="Time budget your life. Keep up with all your day to day habits and responsabilities. Habit building. Habit tracking. ">
     <title>New Habit</title>
     <link rel="manifest" href="../manifest.json">
-    <link rel="stylesheet" href="../styles/main.css">   
+    <link rel="stylesheet" href="../css/main.css">   
   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,12 +26,12 @@
       <form class="new-habit-form">
 
           <div class="span2" >
-              <input type="text" id="habit-name" placeholder="Habit Name">
+              <input type="text" id="habit-name" name="habit-name" placeholder="Habit Name">
           </div>
   
-          <div class="span2 ">
-             <div id="color-drop-outer" class="color-drop-outer"> <div id="selected-color" class="color-dropdown" style="background-color: #4691fa; ">
-               </div> <div id="selected-color" class="dropdown-arrow">&#9660;</div>
+          <div class="span2 ">    
+             <div id="color-drop-outer" class="color-drop-outer"> <div id="selected-color" name="selected-color" class="color-dropdown" style="background-color: #4691fa; ">
+               </div> <div  class="dropdown-arrow">&#9660;</div>
               </div>
 
               <div id="color-palette" class="color-palette hidden">
@@ -55,36 +55,36 @@
                   </div>
 
                   <div class="color-column">
-                    <div class="color-box" style="background-color: #FFFFCC;" data-color="#FFFFCC"></div>
-                    <div class="color-box" style="background-color: #FFFF99;" data-color="#FFFF99"></div>
-                    <div class="color-box" style="background-color: #FFFF66;" data-color="#FFFF66"></div>
-                    <div class="color-box" style="background-color: #FFFF33;" data-color="#FFFF33"></div>
-                    <div class="color-box" style="background-color: #CCCC00;" data-color="#CCCC00"></div>
-                    <div class="color-box" style="background-color: #999900;" data-color="#999900"></div>
+                    <div class="color-box" style="background-color: #fff4cc;" data-color="#fff4cc"></div>
+                    <div class="color-box" style="background-color: #ffec99;" data-color="#ffec99"></div>
+                    <div class="color-box" style="background-color: #ffe666;" data-color="#ffe666"></div>
+                    <div class="color-box" style="background-color: #fbce1a;" data-color="#fbce1a"></div>
+                    <div class="color-box" style="background-color: #cca700;" data-color="#cca700"></div>
+                    <div class="color-box" style="background-color: #997800;" data-color="#997800"></div>
                   </div>
 
                   <div class="color-column">
                     <div class="color-box" style="background-color: #CCFFCC;" data-color="#CCFFCC"></div>
-                    <div class="color-box" style="background-color: #99FF99;" data-color="#99FF99"></div>
-                    <div class="color-box" style="background-color: #66FF66;" data-color="#66FF66"></div>
-                    <div class="color-box" style="background-color: #33FF33;" data-color="#33FF33"></div>
-                    <div class="color-box" style="background-color: #00CC00;" data-color="#00CC00"></div>
-                    <div class="color-box" style="background-color: #009900;" data-color="#009900"></div>
+                    <div class="color-box" style="background-color: #91f391;" data-color="#91f391"></div>
+                    <div class="color-box" style="background-color: #75e267;" data-color="#75e267"></div>
+                    <div class="color-box" style="background-color: #4ecc00;" data-color="#4ecc00"></div>
+                    <div class="color-box" style="background-color: #3cab3c;" data-color="#3cab3c"></div>
+                    <div class="color-box" style="background-color: #01830e;" data-color="#01830e"></div>
                   </div>
 
                   <div class="color-column">
-                    <div class="color-box" style="background-color: #CCFFFF;" data-color="#CCFFFF"></div>
-                    <div class="color-box" style="background-color: #99FFFF;" data-color="#99FFFF"></div>
-                    <div class="color-box" style="background-color: #66FFFF;" data-color="#66FFFF"></div>
-                    <div class="color-box" style="background-color: #33FFFF;" data-color="#33FFFF"></div>
-                    <div class="color-box" style="background-color: #00CCCC;" data-color="#00CCCC"></div>
-                    <div class="color-box" style="background-color: #009999;" data-color="#009999"></div>
+                    <div class="color-box" style="background-color: #ccf9ff;" data-color="#ccf9ff"></div>
+                    <div class="color-box" style="background-color: #99eeff;" data-color="#99eeff"></div>
+                    <div class="color-box" style="background-color: #66e6ff;" data-color="#66e6ff"></div>
+                    <div class="color-box" style="background-color: #33d3ff;" data-color="#33d3ff"></div>
+                    <div class="color-box" style="background-color: #00adcc;" data-color="#00adcc"></div>
+                    <div class="color-box" style="background-color: #006999;" data-color="#006999"></div>
                   </div>
 
                   <div class="color-column">
-                    <div class="color-box" style="background-color: #CCCCFF;" data-color="#CCCCFF"></div>
-                    <div class="color-box" style="background-color: #9999FF;" data-color="#9999FF"></div>
-                    <div class="color-box" style="background-color: #6666FF;" data-color="#6666FF"></div>
+                    <div class="color-box" style="background-color: #adcefc;" data-color="#adcefc"></div>
+                    <div class="color-box" style="background-color: #4691fa;" data-color="#4691fa"></div>
+                    <div class="color-box" style="background-color: #466bff;" data-color="#466bff"></div>
                     <div class="color-box" style="background-color: #3333FF;" data-color="#3333FF"></div>
                     <div class="color-box" style="background-color: #0000CC;" data-color="#0000CC"></div>
                     <div class="color-box" style="background-color: #000099;" data-color="#000099"></div>
@@ -118,9 +118,9 @@
                   </div>
 
                   <div class="color-column">
-                    <div class="color-box" style="background-color: #E5E5E5;" data-color="#E5E5E5"></div>
-                    <div class="color-box" style="background-color: #CCCCCC;" data-color="#CCCCCC"></div>
-                    <div class="color-box" style="background-color: #999999;" data-color="#999999"></div>
+                    <div class="color-box" style="background-color: #ffffff;" data-color="#ffffff"></div>
+                    <div class="color-box" style="background-color: #b0b0b0;" data-color="#b0b0b0"></div>
+                    <div class="color-box" style="background-color: #878787;" data-color="#878787"></div>
                     <div class="color-box" style="background-color: #666666;" data-color="#666666"></div>
                     <div class="color-box" style="background-color: #333333;" data-color="#333333"></div>
                     <div class="color-box" style="background-color: #000000;" data-color="#000000"></div>
@@ -133,12 +133,12 @@
   
           <div>
               <label>Goal:</label>
-              <input type="number" id="goal-number" placeholder="Enter a number" required>
+              <input type="number" id="goal-number" placeholder="Enter a number" name="habit-name" required>
           </div>
           
           <div>
-              <label for="unit">Unit:</label>
-              <input type="text" id="unit" required>
+              <label for="unit" >Unit:</label>
+              <input type="text" id="unit" placeholder="Minutes | $ | time(s)" name="habit-name" required>
           </div>
           
           <div>
@@ -146,27 +146,27 @@
           </div>
 
           <div>
-              <select id="computation">
+              <select id="computation" name="computation">
                   <option value="add">Add</option>
                   <option value="subtract">Subtract</option>
               </select>
           </div>
   
-          <div class="span2" style="height: 4px; width: 70%; background-color: #ccc; margin: auto;"></div>
+          <div class="span2" style="height: 4px; width: 70%; background-color: #ccc; margin: 20px auto;"></div>
   
           <div>
               <label for="habit-name" style="text-align: right; padding-right: 10px;">Repeat</label>
           </div> 
   
           <div class="toggle-container">
-              <input type="checkbox" id="toggle" class="toggle-checkbox">
+              <input type="checkbox" id="toggle" class="toggle-checkbox" >
               <label for="toggle" class="toggle-label"></label>
           </div>
   
           <div class="option-container">
               <label class="option-label" for="weekly">Weekly</label>
               <div class="tick-container">
-                  <input type="checkbox" id="weekly" class="tick-checkbox">
+                  <input type="checkbox" id="weekly" class="tick-checkbox" name="weekly">
                   <label for="weekly" class="tick-label"></label>
               </div>
           </div>
@@ -174,7 +174,7 @@
           <div class="option-container">
               <label class="option-label" for="monthly">Monthly</label>
               <div class="tick-container">
-                  <input type="checkbox" id="monthly" class="tick-checkbox">
+                  <input type="checkbox" id="monthly" class="tick-checkbox" name="monthly">
                   <label for="monthly" class="tick-label"></label>
               </div>
           </div>
@@ -186,14 +186,14 @@
         <div>  <label style="text-align: right;" for="end-date">End date</label></div>
 
           <div class="date-selector">
-              <input type="text" id="start-date" class="date-input" placeholder="__/__/____">
+              <input type="text" id="start-date" class="date-input" placeholder="__/__/____" name="start-date">
           </div>
   
           <div class="date-selector">
-              <input type="text" id="end-date" class="date-input" placeholder="__/__/____">
+              <input type="text" id="end-date" class="date-input" placeholder="__/__/____" name="end-date">
           </div>
 
-          <div class="span2"><button class="new-habit" type="submit"><a href="habits.html">Submit</a></button></div>
+          <div class="span2"><button class="new-habit" type="submit" id="submit-button"><a>Submit</a></button></div>
       </form>
   
  
@@ -206,7 +206,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
-<script src="../scripts/main.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/new-habit-form.js"></script>
 <script src="../app.js"></script>
 </body>
 </html>
