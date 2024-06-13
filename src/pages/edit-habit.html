@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Time budget your life. Keep up with all your day to day habits and responsibilities. Habit building. Habit tracking.">
+    <title>Edit Habit</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="../css/main.css">   
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+<div class="main">
+<div class="menu-button">
+   <a href="habits.html" style="color: black; text-decoration: none; font-size: 40px;"> &#129120;
+   </a>
+</div>
+
+<div class="content">
+    <form class="new-habit-form" id="edit-habit-form">
+
+        <div class="span2">
+            <input type="text" id="habit-name" name="habit-name" placeholder="Habit Name" readonly>
+        </div>
+
+        <div class="span2">    
+            <div id="color-drop-outer" class="color-drop-outer"> 
+                <div id="selected-color" name="selected-color" class="color-dropdown" style="background-color: #4691fa;"></div> 
+                <div class="dropdown-arrow">&#9660;</div>
+            </div>
+
+            <div id="color-palette" class="color-palette hidden">
+                <div class="color-column">
+                    <div class="color-box" style="background-color: #FFCCCC;" data-color="#FFCCCC"></div>
+                    <div class="color-box" style="background-color: #FF6666;" data-color="#FF6666"></div>
+                    <div class="color-box" style="background-color: #FF3333;" data-color="#FF3333"></div>
+                    <div class="color-box" style="background-color: #FF0000;" data-color="#FF0000"></div>
+                    <div class="color-box" style="background-color: #CC0000;" data-color="#CC0000"></div>
+                    <div class="color-box" style="background-color: #990000;" data-color="#990000"></div>
+                </div>
+
+                <div class="color-column">
+                    <div class="color-box" style="background-color: #FFE5CC;" data-color="#FFE5CC"></div>
+                    <div class="color-box" style="background-color: #FFCC99;" data-color="#FFCC99"></div>
+                    <div class="color-box" style="background-color: #FFB266;" data-color="#FFB266"></div>
+                    <div class="color-box" style="background-color: #FF9933;" data-color="#FF9933"></div>
+                    <div class="color-box" style="background-color: #CC7A00;" data-color="#CC7A00"></div>
+                    <div class="color-box" style="background-color: #994C00;" data-color="#994C00"></div>
+                </div>
+
+                <div class="color-column">
+                    <div class="color-box" style="background-color: #fff4cc;" data-color="#fff4cc"></div>
+                    <div class="color-box" style="background-color: #ffec99;" data-color="#ffec99"></div>
+                    <div class="color-box" style="background-color: #ffe666;" data-color="#ffe666"></div>
+                    <div class="color-box" style="background-color: #fbce1a;" data-color="#fbce1a"></div>
+                    <div class="color-box" style="background-color: #cca700;" data-color="#cca700"></div>
+                    <div class="color-box" style="background-color: #997800;" data-color="#997800"></div>
+                </div>
+
+                <div class="color-column">
+                    <div class="color-box" style="background-color: #CCFFCC;" data-color="#CCFFCC"></div>
+                    <div class="color-box" style="background-color: #91f391;" data-color="#91f391"></div>
+                    <div class="color-box" style="background-color: #75e267;" data-color="#75e267"></div>
+                    <div class="color-box" style="background-color: #4ecc00;" data-color="#4ecc00"></div>
+                    <div class="color-box" style="background-color: #3cab3c;" data-color="#3cab3c"></div>
+                    <div class="color-box" style="background-color: #01830e;" data-color="#01830e"></div>
+                </div>
+
+                <div class="color-column">
+                    <div class="color-box" style="background-color: #ccf9ff;" data-color="#ccf9ff"></div>
+                    <div class="color-box" style="background-color: #99eeff;" data-color="#99eeff"></div>
+                    <div class="color-box" style="background-color: #66e6ff;" data-color="#66e6ff"></div>
+                    <div class="color-box" style="background-color: #33d3ff;" data-color="#33d3ff"></div>
+                    <div class="color-box" style="background-color: #00adcc;" data-color="#00adcc"></div>
+                    <div class="color-box" style="background-color: #006999;" data-color="#006999"></div>
+                </div>
+
+                <div class="color-column">
+                    <div class="color-box" style="background-color: #adcefc;" data-color="#adcefc"></div>
+                    <div class="color-box" style="background-color: #4691fa;" data-color="#4691fa"></div>
+                    <div class="color-box" style="background-color: #466bff;" data-color="#466bff"></div>
+                    <div class="color-box" style="background-color: #3333FF;" data-color="#3333FF"></div>
+                    <div class="color-box" style="background-color: #0000CC;" data-color="#0000CC"></div>
+                    <div class="color-box" style="background-color: #000099;" data-color="#000099"></div>
+                </div>
+
+                <div class="color-column">
+                    <div class="color-box" style="background-color: #E5CCFF;" data-color="#E5CCFF"></div>
+                    <div class="color-box" style="background-color: #CC99FF;" data-color="#CC99FF"></div>
+                    <div class="color-box" style="background-color: #B266FF;" data-color="#B266FF"></div>
+                    <div class="color-box" style="background-color: #9933FF;" data-color="#9933FF"></div>
+                    <div class="color-box" style="background-color: #7A00CC;" data-color="#7A00CC"></div>
+                    <div class="color-box" style="background-color: #4C0099;" data-color="#4C0099"></div>
+                </div>
+
+                <div class="color-column">
+                    <div class="color-box" style="background-color: #FFCCFF;" data-color="#FFCCFF"></div>
+                    <div class="color-box" style="background-color: #FF99FF;" data-color="#FF99FF"></div>
+                    <div class="color-box" style="background-color: #FF66FF;" data-color="#FF66FF"></div>
+                    <div class="color-box" style="background-color: #FF33FF;" data-color="#FF33FF"></div>
+                    <div class="color-box" style="background-color: #CC00CC;" data-color="#CC00CC"></div>
+                    <div class="color-box" style="background-color: #990099;" data-color="#990099"></div>
+                </div>
+
+                <div class="color-column">
+                    <div class="color-box" style="background-color: #FFCCE5;" data-color="#FFCCE5"></div>
+                    <div class="color-box" style="background-color: #FF99CC;" data-color="#FF99CC"></div>
+                    <div class="color-box" style="background-color: #FF66B2;" data-color="#FF66B2"></div>
+                    <div class="color-box" style="background-color: #FF3399;" data-color="#FF3399"></div>
+                    <div class="color-box" style="background-color: #CC007A;" data-color="#CC007A"></div>
+                    <div class="color-box" style="background-color: #983257;" data-color="#99004C"></div>
+                </div>
+
+                <div class="color-column">
+                    <div class="color-box" style="background-color: #ffffff;" data-color="#ffffff"></div>
+                    <div class="color-box" style="background-color: #b0b0b0;" data-color="#b0b0b0"></div>
+                    <div class="color-box" style="background-color: #878787;" data-color="#878787"></div>
+                    <div class="color-box" style="background-color: #666666;" data-color="#666666"></div>
+                    <div class="color-box" style="background-color: #333333;" data-color="#333333"></div>
+                    <div class="color-box" style="background-color: #000000;" data-color="#000000"></div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <label>Goal:</label>
+            <input type="number" id="goal-number" placeholder="Enter a number" name="habit-name" required>
+        </div>
+        
+        <div>
+            <label for="unit">Unit:</label>
+            <input type="text" id="unit" placeholder="Minutes | $ | time(s)" name="habit-name" required>
+        </div>
+        
+        <div>
+            <label for="computation">Computation:</label>
+        </div>
+
+        <div>
+            <select id="computation" name="computation">
+                <option value="add">Add</option>
+                <option value="subtract">Subtract</option>
+            </select>
+        </div>
+
+        <div class="span2" style="height: 4px; width: 70%; background-color: #ccc; margin: 20px auto;"></div>
+
+        <div>
+            <label for="habit-name" style="text-align: right; padding-right: 10px;">Repeat</label>
+        </div> 
+
+        <div class="toggle-container">
+            <input type="checkbox" id="toggle" class="toggle-checkbox">
+            <label for="toggle" class="toggle-label"></label>
+        </div>
+
+        <div class="option-container">
+            <label class="option-label" for="weekly">Weekly</label>
+            <div class="tick-container">
+                <input type="checkbox" id="weekly" class="tick-checkbox" name="weekly">
+                <label for="weekly" class="tick-label"></label>
+            </div>
+        </div>
+
+        <div class="option-container">
+            <label class="option-label" for="monthly">Monthly</label>
+            <div class="tick-container">
+                <input type="checkbox" id="monthly" class="tick-checkbox" name="monthly">
+                <label for="monthly" class="tick-label"></label>
+            </div>
+        </div>
+
+        <div>
+            <label for="start-date">Start date</label>
+        </div>
+
+        <div>
+            <label style="text-align: right;" for="end-date">End date</label>
+        </div>
+
+        <div class="date-selector">
+            <input type="text" id="start-date" class="date-input" placeholder="__/__/____" name="start-date">
+        </div>
+
+        <div class="date-selector">
+            <input type="text" id="end-date" class="date-input" placeholder="__/__/____" name="end-date">
+        </div>
+
+        <div class="span2">
+            <button class="new-habit" type="submit" id="submit-button"><a>Save Changes</a></button>
+        </div>
+        <div class="span2">
+            <button type="button" id="delete-habit-button"><a>Delete Habit</a></button>
+        </div>
+    </form>
+</div><!-- container -->
+
+</div> <!-- main -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<script src="../js/main.js"></script>
+<script src="../js/new-habit-form.js"></script>
+<script src="../app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const habitKey = urlParams.get('habit');
+    
+    if (habitKey) {
+        const habitDetails = JSON.parse(localStorage.getItem(habitKey));
+        
+        document.getElementById('habit-name').value = habitKey.replace('habitDetails_', '');
+        document.getElementById('selected-color').style.backgroundColor = habitDetails[0];
+        document.getElementById('goal-number').value = habitDetails[1];
+        document.getElementById('unit').value = habitDetails[2];
+        document.getElementById('computation').value = habitDetails[3];
+        document.getElementById('weekly').checked = habitDetails[4];
+        document.getElementById('monthly').checked = habitDetails[5];
+        document.getElementById('start-date').value = habitDetails[6];
+        document.getElementById('end-date').value = habitDetails[7];
+    }
+
+    document.getElementById('edit-habit-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const updatedHabitDetails = [
+            document.getElementById('selected-color').style.backgroundColor,
+            document.getElementById('goal-number').value,
+            document.getElementById('unit').value,
+            document.getElementById('computation').value,
+            document.getElementById('weekly').checked,
+            document.getElementById('monthly').checked,
+            document.getElementById('start-date').value,
+            document.getElementById('end-date').value
+        ];
+
+        localStorage.setItem(habitKey, JSON.stringify(updatedHabitDetails));
+        window.location.href = 'habits.html';
+    });
+
+    document.getElementById('delete-habit-button').addEventListener('click', function() {
+        if (confirm('Are you sure you want to delete this habit?')) {
+            localStorage.removeItem(habitKey);
+            window.location.href = 'habits.html';
+        }
+    });
+
+    // Color selector logic
+    const colorDropOuter = document.getElementById('color-drop-outer');
+    const selectedColor = document.getElementById('selected-color');
+    const colorPalette = document.getElementById('color-palette');
+
+    colorDropOuter.addEventListener('click', function(event) {
+        event.stopPropagation();
+        colorPalette.classList.toggle('hidden');
+    });
+
+    const colorBoxes = document.querySelectorAll('.color-box');
+    colorBoxes.forEach(function(box) {
+        box.addEventListener('click', function() {
+            const color = box.getAttribute('data-color');
+            selectedColor.style.backgroundColor = color;
+            colorPalette.classList.add('hidden');
+        });
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!colorDropOuter.contains(event.target)) {
+            colorPalette.classList.add('hidden');
+        }
+    });
+
+    // Initialize date pickers
+    $("#start-date").datepicker({
+        dateFormat: "mm/dd/yy",
+        onSelect: function(dateText, inst) {
+            console.log("Start Date Selected: " + dateText);
+        }
+    });
+
+    $("#end-date").datepicker({
+        dateFormat: "mm/dd/yy",
+        onSelect: function(dateText, inst) {
+            console.log("End Date Selected: " + dateText);
+        }
+    });
+});
+</script>
+</body>
+</html>
