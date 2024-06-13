@@ -26,7 +26,7 @@
             <a class="menu-link" href="src/pages/habits.html">Habits</a>
             <a class="menu-link" href="src/pages/stats.html">Stats</a>
             <a class="menu-link" href="src/pages/settings.html">Settings</a>
-            <a class="menu-link" href="src/pages/account.html">Account</a>
+            <a class="menu-link" href="src/ages/account.html">Account</a>
         </div>
     </div>
 
@@ -37,14 +37,16 @@
   </div> <!-- main -->
 
   <script src="src/scripts/main.js"></script>
-  <script src="src/scripts/app.js"></script>
+  <script src="app.js"></script>
   <script>
   document.addEventListener('DOMContentLoaded', function() {
       const habitsContainer = document.getElementById('habits-container');
+      let hasHabits = false;
 
       for (let i = 0; i < localStorage.length; i++) {
           const key = localStorage.key(i);
           if (key.startsWith('habitDetails_')) {
+              hasHabits = true;
               const habitDetails = JSON.parse(localStorage.getItem(key));
               const progressKey = `progress_${key}`;
               const storedProgress = localStorage.getItem(progressKey);
@@ -70,6 +72,10 @@
 
               habitsContainer.appendChild(habitCard);
           }
+      }
+
+      if (!hasHabits) {
+          alert("Add new habits by navigating to the habits page");
       }
   });
 
@@ -138,3 +144,4 @@
   </style>
 </body>
 </html>
+
