@@ -17,16 +17,16 @@
 <body class="poppins-regular">
     <div class="main">
     
-    <div class="menu-button" onclick="toggleMenu()"><div class="menu-bars"></div><div class="menu-bars" ></div><div class="menu-bars"></div></div>
+    <div class="menu-button" onclick="toggleMenu()"><div class="menu-bars"></div><div class="menu-bars"></div><div class="menu-bars"></div></div>
     
     <div class="menu">
         <div class="triangle-up"></div>
         <div class="menu-link-container">
             <a class="menu-link" href="index.html">Dashboard </a>
-            <a class="menu-link" href="src/pages/habits.html">Habits</a>
-            <a class="menu-link" href="src/pages/stats.html">Stats</a>
-            <a class="menu-link" href="src/pages/settings.html">Settings</a>
-            <a class="menu-link" href="src/ages/account.html">Account</a>
+            <a class="menu-link" href="pages/habits.html">Habits</a>
+            <a class="menu-link" href="pages/stats.html">Stats</a>
+            <a class="menu-link" href="pages/settings.html">Settings</a>
+            <a class="menu-link" href="pages/account.html">Account</a>
         </div>
     </div>
 
@@ -50,24 +50,26 @@
               const habitDetails = JSON.parse(localStorage.getItem(key));
               const progressKey = `progress_${key}`;
               const storedProgress = localStorage.getItem(progressKey);
-              const initialProgress = storedProgress ? parseFloat(storedProgress) : 10; // Default to 10%
+              const initialProgress = storedProgress ? parseFloat(storedProgress) : (habitDetails[3] === 'subtract' ? 100 : 10); // Default to 10% or 100% based on computation method
+
+              // Calculate current progress value based on initialProgress percentage
+              const currentProgressValue = (initialProgress / 100) * habitDetails[1];
 
               // Create habit card
               const habitCard = document.createElement('div');
               habitCard.className = 'habit-card';
-              habitCard.style.borderLeft = `10px solid ${habitDetails[0]}`;
               habitCard.innerHTML = `
                   <div class="habit-header">
                       <h2>${key.replace('habitDetails_', '')}</h2>
-                      <div class="habit-goal">Goal: ${habitDetails[1]} ${habitDetails[2]}</div>
                   </div>
                   <div class="progress-container">
-                      <div class="progress-bar" id="progress-${i}" style="width: ${initialProgress}%;"></div>
+                      <div class="progress-bar ${initialProgress > 0 && initialProgress < 100 ? 'polygon-edge' : ''} ${habitDetails[3] === 'subtract' ? 'subtract' : ''}" id="progress-${i}" style="width: ${initialProgress}%; background-color: ${habitDetails[0]}"></div>
                   </div>
+                 <div class="habit-goal">${Math.floor(currentProgressValue)}/${habitDetails[1]} ${habitDetails[2]}</div> 
               `;
 
               habitCard.addEventListener('click', function() {
-                  updateProgress(i, key, habitDetails[1]);
+                  updateProgress(i, key, habitDetails[1], habitDetails[3]);
               });
 
               habitsContainer.appendChild(habitCard);
@@ -79,21 +81,36 @@
       }
   });
 
-  function updateProgress(index, key, goal) {
+  function updateProgress(index, key, goal, computation) {
       const progressBar = document.getElementById(`progress-${index}`);
       const progressKey = `progress_${key}`;
       const currentProgressPercent = parseFloat(progressBar.style.width);
       const currentProgressValue = (currentProgressPercent / 100) * goal;
 
-      const userInput = prompt(`Enter the amount to add to the current progress for ${key.replace('habitDetails_', '')}:`);
+      const userInput = prompt(`Enter the amount to ${computation === 'subtract' ? 'subtract from' : 'add to'} the current progress for ${key.replace('habitDetails_', '')}:`);
       const userValue = parseFloat(userInput);
 
-      if (!isNaN(userValue) && userValue >= 0) {
-          const newProgressValue = Math.min(currentProgressValue + userValue, goal);
-          const newProgressPercent = (newProgressValue / goal) * 100;
+      if (!isNaN(userValue)) {
+          let newProgressValue, newProgressPercent;
+          if (computation === 'subtract') {
+              newProgressValue = Math.max(currentProgressValue - userValue, 0);
+              newProgressPercent = (newProgressValue / goal) * 100;
+              progressBar.style.width = `${newProgressPercent}%`;
+          } else {
+              newProgressValue = Math.min(currentProgressValue + userValue, goal);
+              newProgressPercent = (newProgressValue / goal) * 100;
+              progressBar.style.width = `${newProgressPercent}%`;
+          }
 
-          progressBar.style.width = `${newProgressPercent}%`;
+          if (newProgressPercent > 0 && newProgressPercent < 100) {
+              progressBar.classList.add('polygon-edge');
+          } else {
+              progressBar.classList.remove('polygon-edge');
+          }
+
           localStorage.setItem(progressKey, newProgressPercent);
+          const habitGoalElement = document.querySelector(`#progress-${index}`).nextElementSibling;
+          habitGoalElement.textContent = `${Math.floor(newProgressValue)}/${goal} ${habitDetails[2]}`;
           console.log(`Updated progress for ${key.replace('habitDetails_', '')}: ${newProgressPercent}%`);
       } else {
           alert('Invalid input. Please enter a numerical value.');
@@ -103,6 +120,7 @@
   <style>
   /* Add some basic styles for the dashboard */
   .habit-card {
+      min-width: 300px;
       background: #fff;
       padding: 20px;
       margin-bottom: 10px;
@@ -125,23 +143,37 @@
   .habit-goal {
       font-size: 14px;
       color: #666;
+      text-align: right; /* Align text to the right */
   }
 
   .progress-container {
       background: #e0e0e0;
-      border-radius: 5px;
       overflow: hidden;
       height: 20px;
       margin-top: 10px;
       margin-bottom: 10px;
+      position: relative;
+      border-radius: 5px;
+      display: flex;
+      justify-content: flex-start; /* Default to left alignment */
   }
 
   .progress-bar {
-      background: #76c7c0;
       height: 100%;
       transition: width 0.3s;
+      position: relative;
+  }
+
+  .progress-bar.polygon-edge {
+      clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  }
+
+  .progress-bar.subtract {
+      transform: scaleX(-1);
+      margin-left: auto; /* Align to the right */
   }
   </style>
 </body>
 </html>
+
 
