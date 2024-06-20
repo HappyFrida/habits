@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
             habitCard.innerHTML = `
                 <div class="habit-header"> 
                     <h2>${key.replace('habitDetails_', '')}</h2>
-                    <div class="habit-goal">Goal: ${habitDetails[1]} ${habitDetails[2]}</div>
+                  
                 </div>
-                <div class="color-bar" style="background: ${habitDetails[0]};"></div>
+                <div class="habit-underline" style="background: ${habitDetails[0]};"></div>
             `;
 
             // Make the card clickable
@@ -72,11 +72,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <style>
 /* Add some basic styles for the dashboard */
 .habit-card {
-    background: #fff;
+    background: rgb(249, 245, 239);
+    min-width: 300px;
     padding: 20px;
     margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    /* box-shadow: 0 0 5px rgba(130, 130, 130, 0.1); */
     position: relative;
 }
 
@@ -96,10 +97,12 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .habit-underline {
-    height: 5px;
-    margin-top: 10px;
-    border-radius: 5px;
+    height: 8px;
+    margin-top: 5px;
+    box-shadow: 0 0 5px rgba(103, 103, 103, 0.1);
+  
 }
 </style>
 </body>
 </html>
+
